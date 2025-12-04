@@ -1,0 +1,10 @@
+        Advent of Code 2025
+        -------------------
+This is my attempt at solving the puzzles
+from Advent of Code 2025 using Python.
+
+You can run the project by running:
+
+uv run main.py <DAY>
+
+https://adventofcode.com/2025
