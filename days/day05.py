@@ -12,12 +12,9 @@ def parse_data():
 def part1() -> None:
     ranges, ids = parse_data()
 
-    fresh_ids = set()
-
-    for id in ids:
-        for start, end in ranges:
-            if id >= start and id <= end:
-                fresh_ids.add(id)
+    fresh_ids = [
+        id for id in ids if any(id >= start and id <= end for start, end in ranges)
+    ]
 
     print(f"{len(fresh_ids)} ingredients are fresh.")
 
