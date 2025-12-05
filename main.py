@@ -36,6 +36,11 @@ def main() -> None:
 
                 day04.part1()
                 day04.part2()
+            case "5":
+                from days import day05
+
+                day05.part1()
+                day05.part2()
             case _:
                 print("Please enter a correct day")
     else:
