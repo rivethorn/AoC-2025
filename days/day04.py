@@ -1,4 +1,5 @@
-from typing import NamedTuple
+from __future__ import annotations
+from typing import Any, Generator, NamedTuple
 
 from utils import read_lines
 
@@ -7,7 +8,7 @@ class Point(NamedTuple):
     x: int
     y: int
 
-    def yield_neighbors(self):
+    def yield_neighbors(self) -> Generator[Point, Any, None]:
         for dx in (-1, 0, 1):
             for dy in (-1, 0, 1):
                 if dx == 0 and dy == 0:
@@ -18,20 +19,22 @@ class Point(NamedTuple):
 class ForkliftGrid:
     def __init__(self, grid_array: list) -> None:
         self.array = [list(row) for row in grid_array]
-        self._width = len(self.array[0])
-        self._height = len(self.array)
+        self._width: int = len(self.array[0])
+        self._height: int = len(self.array)
 
     def all_points(self) -> list[Point]:
-        points = [Point(x, y) for x in range(self._width) for y in range(self._height)]
+        points: list[Point] = [
+            Point(x, y) for x in range(self._width) for y in range(self._height)
+        ]
         return points
 
     def val(self, point: Point):
         return self.array[point.y][point.x]
 
-    def set_val(self, point: Point, value):
+    def set_val(self, point: Point, value) -> None:
         self.array[point.y][point.x] = value
 
-    def is_valid(self, point: Point):
+    def is_valid(self, point: Point) -> bool:
         if 0 <= point.x < self._width and 0 <= point.y < self._height:
             return True
         return False
@@ -54,7 +57,7 @@ def get_locations(grid: ForkliftGrid):
 
 
 def part1() -> None:
-    lines = read_lines("04")
+    lines: list[str] = read_lines("04")
 
     grid = ForkliftGrid(lines)
 
@@ -64,7 +67,7 @@ def part1() -> None:
 
 
 def part2() -> None:
-    lines = read_lines("04")
+    lines: list[str] = read_lines("04")
 
     grid = ForkliftGrid(lines)
 
