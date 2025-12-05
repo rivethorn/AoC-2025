@@ -1,10 +1,24 @@
-        Advent of Code 2025
-        -------------------
+          |
+         \|/ 
+        --✴--
+         >o<
+        ><¡><
+       >¡<@>O<
+      >>o<O>@<<       __——--===✴===-———__
+     ><@>o>@<¡><      Advent of Code 2025
+    >>o>>¡>@o<<@<     ———————————————————
+   >¡>>o>O<@>¡>O@<
+  >O>o>>@>O>o<o<<o<
+ >>@>O>¡>@>O><o<@<¡<
+         | |
+  __  ___| |___  __ 
+
+
 This is my attempt at solving the puzzles
-from Advent of Code 2025 using Python.
+  from Advent of Code 2025 with Python.
 
-You can run the project by running:
+   You can run the project by running:
 
-uv run main.py <DAY>
+          uv run main.py <DAY>
 
 https://adventofcode.com/2025
